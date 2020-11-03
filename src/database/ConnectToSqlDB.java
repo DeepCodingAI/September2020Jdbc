@@ -41,12 +41,12 @@ public class ConnectToSqlDB {
     }
 
 
-    public static List<Student> readStudentsProfile(){
+    public static List<Student> readStudentsProfile(String tableName){
         List<Student> list = new ArrayList<>();
         Student student = null;
         try{
             Connection connection = connectToSqlDatabase();
-            String query = "Select *From Students";
+            String query = "Select *From "+tableName;
             Statement stmt = connection.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
             while(resultSet.next()){
@@ -72,6 +72,10 @@ public class ConnectToSqlDB {
     public static void insertProfileIntoSqlTable(Student student,String tableName, String columnName1, String columnName2, String columnName3){
         try{
             connect =  connectToSqlDatabase();
+            //ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+           // ps.executeUpdate();
+            //ps = connect.prepareStatement("CREATE TABLE "+tableName+" ("+columnName1+" VARCHAR(20),"+columnName2+" VARCHAR(20),"+columnName3+" VARCHAR(20));");
+            //ps.executeUpdate();
             ps = connect.prepareStatement("Insert Into "+ tableName+"("+columnName1+","+columnName2+","+columnName3+
                     ") Values(?,?,?)");
             ps.setString(1,student.getStName());
@@ -91,8 +95,8 @@ public class ConnectToSqlDB {
 
 
     public static void main(String[] args) {
-        insertProfileIntoSqlTable(new Student("Ali","9067","02-11-1980"),"Students","stName","stID","stDOB");
-        List<Student> list = readStudentsProfile();
+        insertProfileIntoSqlTable(new Student("ALI","9087","02-11-1980"),"Trainee","stName","stID","stDOB");
+        List<Student> list = readStudentsProfile("Trainee");
         for(Student student:list){
             System.out.println(student.getStName()+ " "+ student.getStID()+ " "+ student.getStDOB());
         }
