@@ -14,16 +14,23 @@ public class ConnectToSqlDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
-    public static Properties loadProperties() throws IOException {
+    public static Properties loadLocalProperties() throws IOException {
         Properties prop = new Properties();
         InputStream ism = new FileInputStream("src/secret.properties");
         prop.load(ism);
         ism.close();
         return prop;
     }
+    public static Properties loadCloudProperties() throws IOException {
+        Properties prop = new Properties();
+        InputStream ism = new FileInputStream("src/aws-rds-db.properties");
+        prop.load(ism);
+        ism.close();
+        return prop;
+    }
 
     public static Connection connectToSqlDatabase() throws IOException, ClassNotFoundException, SQLException {
-        Properties properties = loadProperties();
+        Properties properties = loadCloudProperties();
         String driverClass = properties.getProperty("MYSQLJDBC.driver");
         String url = properties.getProperty("MYSQLJDBC.url");
         String userName = properties.getProperty("MYSQLJDBC.userName");
