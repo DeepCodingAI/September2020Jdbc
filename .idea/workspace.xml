@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bf0017b-8a4f-43e1-8a04-ff43043c9e3d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/unittesting/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittesting/TestCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ConnectToSqlDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ConnectToSqlDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSeptember2020JDBC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSeptember2020JDBC.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestCalculator">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -58,6 +60,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="unittesting.TestCalculator" />
+      <module name="ProjectSeptember2020JDBC" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittesting.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestCalculator" />
         <item itemvalue="Application.ConnectToSqlDB" />
       </list>
     </recent_temporary>
@@ -124,50 +141,50 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="776" height="456" key="DebuggerActiveHint/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627078929" />
-    <state width="1397" height="202" key="GridCell.Tab.0.bottom" timestamp="1604627743588">
+    <state width="1397" height="202" key="GridCell.Tab.0.bottom" timestamp="1604631087910">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.0.bottom/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743588" />
+    <state width="1397" height="202" key="GridCell.Tab.0.bottom/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631087910" />
     <state width="1397" height="196" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1604624027508" />
-    <state width="1397" height="202" key="GridCell.Tab.0.center" timestamp="1604627743587">
+    <state width="1397" height="202" key="GridCell.Tab.0.center" timestamp="1604631087910">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.0.center/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743587" />
+    <state width="1397" height="202" key="GridCell.Tab.0.center/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631087910" />
     <state width="1397" height="196" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1604624027507" />
-    <state width="1397" height="202" key="GridCell.Tab.0.left" timestamp="1604627743586">
+    <state width="1397" height="202" key="GridCell.Tab.0.left" timestamp="1604631087909">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.0.left/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743586" />
+    <state width="1397" height="202" key="GridCell.Tab.0.left/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631087909" />
     <state width="1397" height="196" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1604624027506" />
-    <state width="1397" height="202" key="GridCell.Tab.0.right" timestamp="1604627743587">
+    <state width="1397" height="202" key="GridCell.Tab.0.right" timestamp="1604631087910">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.0.right/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743587" />
+    <state width="1397" height="202" key="GridCell.Tab.0.right/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631087910" />
     <state width="1397" height="196" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1604624027507" />
-    <state width="1397" height="202" key="GridCell.Tab.1.bottom" timestamp="1604627743768">
+    <state width="1397" height="202" key="GridCell.Tab.1.bottom" timestamp="1604631018313">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.1.bottom/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743768" />
+    <state width="1397" height="202" key="GridCell.Tab.1.bottom/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631018313" />
     <state width="1397" height="196" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1604624017857" />
-    <state width="1397" height="202" key="GridCell.Tab.1.center" timestamp="1604627743766">
+    <state width="1397" height="202" key="GridCell.Tab.1.center" timestamp="1604631018312">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.1.center/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743766" />
+    <state width="1397" height="202" key="GridCell.Tab.1.center/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631018312" />
     <state width="1397" height="196" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1604624017857" />
-    <state width="1397" height="202" key="GridCell.Tab.1.left" timestamp="1604627743766">
+    <state width="1397" height="202" key="GridCell.Tab.1.left" timestamp="1604631018311">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.1.left/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743766" />
+    <state width="1397" height="202" key="GridCell.Tab.1.left/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631018311" />
     <state width="1397" height="196" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1604624017856" />
-    <state width="1397" height="202" key="GridCell.Tab.1.right" timestamp="1604627743767">
+    <state width="1397" height="202" key="GridCell.Tab.1.right" timestamp="1604631018312">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1397" height="202" key="GridCell.Tab.1.right/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604627743767" />
+    <state width="1397" height="202" key="GridCell.Tab.1.right/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604631018312" />
     <state width="1397" height="196" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1604624017857" />
-    <state x="163" y="66" key="SettingsEditor" timestamp="1604370083318">
+    <state x="163" y="66" key="SettingsEditor" timestamp="1604630650409">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="163" y="66" key="SettingsEditor/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604370083318" />
+    <state x="163" y="66" key="SettingsEditor/-309.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1604630650409" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
