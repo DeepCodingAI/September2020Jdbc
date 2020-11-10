@@ -4,6 +4,7 @@ public class Student {
     private String stName;
     private String stID;
     private String stDOB;
+    private String stGrade;
 
     public Student(){}
     public Student(String stName, String stID, String stDOB) {
@@ -11,7 +12,12 @@ public class Student {
         this.stID = stID;
         this.stDOB = stDOB;
     }
-
+    public Student(String stName, String stID, String stDOB, String stGrade) {
+        this.stName = stName;
+        this.stID = stID;
+        this.stDOB = stDOB;
+        this.stGrade = stGrade;
+    }
     public String getStName() {
         return stName;
     }
@@ -34,5 +40,12 @@ public class Student {
 
     public void setStDOB(String stDOB) {
         this.stDOB = stDOB;
+    }
+
+    public String getStGrade() {
+        return stGrade;
+    }
+    public void setStGrade(String stGrade) {
+        this.stGrade = stGrade;
     }
 }
