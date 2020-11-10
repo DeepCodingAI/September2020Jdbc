@@ -11,49 +11,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConnectToMongoDB {
+
     public static MongoDatabase mongoDatabase = null;
 
-    public static MongoDatabase connectToMongoDB() {
+    public static MongoDatabase connectToMongoDB(String dataBaseName){
         MongoClient mongoClient = new MongoClient();
-        mongoDatabase = mongoClient.getDatabase("students");
-        System.out.println("Database Connected");
-
+        mongoDatabase = mongoClient.getDatabase(dataBaseName);
+        System.out.println("MongoDB database is connected to "+ dataBaseName);
         return mongoDatabase;
     }
 
-    public String insertIntoMongoDB(List<Student> student, String profileName){
-        MongoDatabase mongoDatabase = connectToMongoDB();
-        MongoCollection myCollection = mongoDatabase.getCollection(profileName);
-        boolean collectionExists = mongoDatabase.listCollectionNames()
-                .into(new ArrayList<String>()).contains(profileName);
-        if(collectionExists) {
-            myCollection.drop();
+    public static String insertIntoMongoDB(List<Student> list, String dataBaseName, String collectionName){
+        MongoDatabase mongoDatabase = connectToMongoDB(dataBaseName);
+        for(int i=0; i<list.size(); i++){
+            MongoCollection<Document> collGiven = mongoDatabase.getCollection(collectionName);
+            Document document = new Document().append("stName",list.get(i).getStName())
+                                              .append("stID",list.get(i).getStID())
+                                              .append("stDOB",list.get(i).getStDOB())
+                                              .append("stGrade",list.get(i).getStGrade());
+            collGiven.insertOne(document);
         }
-        for(int i=0; i<student.size(); i++){
-            MongoCollection<Document> collection = mongoDatabase.getCollection(profileName);
-            Document document = new Document().append("stName", student.get(i).getStName()).append("stID",
-                    student.get(i).getStID()).append("stDOB",student.get(i).getStDOB()).append("stGrade", student.get(i).getStGrade());
-            collection.insertOne(document);
-        }
-        return  "Student has been registered";
+        return "Student has been registered";
+
     }
 
-    public static List<Student> readStudentListFromMongoDB(String profileName){
-        List<Student> list = new ArrayList<Student>();
+    public static List<Student> readStudentObject(String dataBasename,String collectionName){
+        List<Student> list = new ArrayList<>();
         Student student = new Student();
-        MongoDatabase mongoDatabase = connectToMongoDB();
-        MongoCollection<Document> collection = mongoDatabase.getCollection(profileName);
+        MongoDatabase mongoDatabase = connectToMongoDB(dataBasename);
+        MongoCollection<Document> collection = mongoDatabase.getCollection(collectionName);
         BasicDBObject basicDBObject = new BasicDBObject();
         FindIterable<Document> iterable = collection.find(basicDBObject);
-        for(Document doc:iterable){
-            String stName = (String)doc.get("stName");
-            student.setStName(stName);
-            String stID = (String)doc.get("stID");
-            student.setStName(stID);
-            String stDOB = (String)doc.get("stDOB");
-            student.setStName(stDOB);
-            String stGrade = (String)doc.get("stGrade");
-            student.setStGrade(stGrade);
+        for(Document document:iterable){
+            String stName = (String)document.get("stName");
+            String stID = (String)document.get("stID");
+            String stDOB = (String)document.get("stDOB");
+            String stGrade = (String)document.get("stGrade");
             student = new Student(stName,stID,stDOB,stGrade);
             list.add(student);
             student = new Student();
@@ -61,10 +54,15 @@ public class ConnectToMongoDB {
         return list;
     }
 
-    public static void main(String [] args){
-        List<Student> studentList = readStudentListFromMongoDB("profile");
-        for(Student student:studentList){
-            System.out.println(student.getStName()+ " "+ student.getStID()+" "+student.getStDOB()+" "+student.getStGrade());
+    public static void main(String[] args) {
+        List<Student> listOfStudent = new ArrayList<>();
+        listOfStudent.add(new Student("Martin","2190","09-29-1999","B+"));
+        listOfStudent.add(new Student("Jonson","4580","07-25-2099","A+"));
+        insertIntoMongoDB(listOfStudent,"students","profile");
+        List<Student> list = readStudentObject("students","profile");
+        for(Student student:list){
+            System.out.println(student.getStName()+ " "+student.getStID()+" "+student.getStDOB()+" "+student.getStGrade());
         }
     }
+
 }
